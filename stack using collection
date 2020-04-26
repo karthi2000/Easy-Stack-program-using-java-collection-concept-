@@ -1,0 +1,96 @@
+import java.util.*;
+
+public class stack
+{
+
+  public static void main (String args[])
+  {
+    int top = -1;
+      ArrayList < Integer > stac = new ArrayList < Integer > ();
+    Scanner in = new Scanner (System.in);
+    Stack k = new Stack ();
+    while (true)
+      {
+	System.out.println
+	  ("--------------------------------------------------------------");
+	System.out.println
+	  ("Enter the option \n 1.push the element \n 2.pop the element   \n 3. Print all the elemement of stack \n 4.Print the size of stack \n 5.exit");
+	int n = in.nextInt ();
+	  System.out.println
+	  ("--------------------------------------------------------------");
+	int m = 0;
+	switch (n)
+	  {
+	  case 1:
+	    {
+	      System.out.println ("Enter the element to push");
+	      int a = in.nextInt ();
+	      if (top == -1)
+		{
+		  stac.add (a);
+		  top = 0;
+		}
+	      else
+		{
+		  stac.add (a);
+		  top = top + 1;
+		  System.out.println ("Successfully the element is pushed");
+		}
+
+
+	      break;
+	    }
+	  case 2:
+	    {
+	      System.out.println ("Pop operation");
+
+	      int h;
+	      if (top == -1)
+		{
+		  System.out.println ("There is no element in stack");
+
+		}
+	      else
+		{
+		  h = stac.get (top);
+		  stac.remove (top);
+		  top = top - 1;
+		  System.out.println ("The Poped Element : " + h);
+		}
+
+	      break;
+	    }
+	  case 5:
+	    {
+	      m = 1;
+	      break;
+	    }
+	  case 4:
+	    {
+	      int size = top + 1;
+	      System.out.println ("The size of stack is : " + size);
+	      break;
+	    }
+	  case 3:
+	    {
+	      if (top == -1)
+		{
+		  System.out.println ("The stack is empty");
+		}
+	      else
+		{
+		  for (int i = 0; i <= top; i++)
+		    {
+		      System.out.println (stac.get (i));
+		    }
+		}
+	    }
+	  }
+	if (m == 1)
+	  {
+	    break;
+	  }
+      }
+    System.out.println ("The operation has ended");
+  }
+}
